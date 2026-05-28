@@ -1,22 +1,162 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Mon Entreprise</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votre Entreprise</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0b0b0b;
+            color: #ffffff;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(90deg, #111, #1c1c1c);
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        header p {
+            color: #cccccc;
+            margin-top: 10px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #111;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #00c3ff;
+        }
+
+        section {
+            padding: 50px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h2 {
+            border-left: 4px solid #00c3ff;
+            padding-left: 10px;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            transition: 0.3s;
+            box-shadow: 0 0 20px rgba(0, 195, 255, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #111;
+            margin-top: 40px;
+        }
+
+        button {
+            background: #00c3ff;
+            border: none;
+            padding: 12px 20px;
+            color: black;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0099cc;
+        }
+    </style>
 </head>
 <body>
-    <h1>Bienvenue sur mon site</h1>
-    <p>Je suis concepteur CAO et je propose des services de modélisation 3D.</p>
 
-    <h2>Mes services</h2>
-    <ul>
-        <li>Conception 3D</li>
-        <li>Mise en plan</li>
-        <li>Prototypage</li>
-    </ul>
+<header>
+    <h1>Votre Entreprise</h1>
+    <p>Prestations de services industrielles et techniques</p>
+</header>
 
+<nav>
+    #servicesServices</a>
+    <a href="#about">À propos</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="services">
+    <h2>Nos Services</h2>
+    <div class="services">
+        <div class="card">
+            <h3>Aide à la mise en service</h3>
+            <p>Accompagnement technique pour le démarrage et l'installation de vos équipements industriels.</p>
+        </div>
+
+        <div class="card">
+            <h3>Montage mécanique & électrotechnique</h3>
+            <p>Assemblage, installation et mise en place de systèmes mécaniques et électrotechniques.</p>
+        </div>
+
+        <div class="card">
+            <h3>Électricité industrielle</h3>
+            <p>Interventions sur installations industrielles : câblage, maintenance et dépannage.</p>
+        </div>
+
+        <div class="card">
+            <h3>Électricité bâtiment</h3>
+            <p>Travaux électriques pour particuliers et professionnels : installation et rénovation.</p>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <h2>À propos</h2>
+    <p>
+        Professionnel expérimenté dans les domaines techniques et industriels, je propose des prestations de services adaptées à vos besoins.
+        Sérieux, réactif et rigoureux, j'accompagne mes clients dans la réussite de leurs projets.
+    </p>
+</section>
+
+<section id="contact">
     <h2>Contact</h2>
-    <p>Email : tonemail@email.com</p>
+    <p>Email : votre.email@email.com</p>
+    <p>Téléphone : 06 00 00 00 00</p>
+    <br>
+    <button onclick="alert('Merci de me contacter par email ou téléphone')">Me contacter</button>
+</section>
+
+<footer>
+    <p>© 2026 Votre Entreprise - Tous droits réservés</p>
+</footer>
+
 </body>
 </html>
