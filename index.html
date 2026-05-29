@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -55,7 +56,6 @@ nav a {
     font-weight: bold;
 }
 
-/* Drapeaux */
 .lang {
     position: absolute;
     right: 20px;
@@ -118,7 +118,6 @@ function setLang(lang) {
 </script>
 
 </head>
-
 <body>
 
 <header>
@@ -127,62 +126,61 @@ function setLang(lang) {
     <div class="header-text">
         <h1 data-fr="MACHINA ELECTRO" data-en="MACHINA ELECTRO">MACHINA ELECTRO</h1>
         <p data-fr="Prestations de services industrielles et techniques" 
-           data-en="Industrial and technical services">
-        </p>
+           data-en="Industrial and technical services">Prestations de services industrielles et techniques</p>
     </div>
 </header>
 
 <nav>
     <a href="#services">Services</a>
     <a href="#about">À propos</a>
-    ">Contact</a>
+    <a href="#contact">Contact</a>
 
     <div class="lang">
-        https://flagcdn.com/w40/fr.png
-        https://flagcdn.com/w40/gb.png">
+        <img src="https://flagcdn.com/w40/fr.png" onclick="setLang('fr')">
+        <img src="https://flagcdn.com/w40/gb.png" onclick="setLang('en')">
     </div>
 </nav>
 
 <section id="services">
-    <h2 data-fr="Nos Services" data-en="Our Services"></h2>
+    <h2 data-fr="Nos Services" data-en="Our Services">Nos Services</h2>
 
     <div class="services">
 
         <div class="card">
-            <h3 data-fr="Aide à la mise en service" data-en="Commissioning support"></h3>
+            <h3 data-fr="Aide à la mise en service" data-en="Commissioning support">Aide à la mise en service</h3>
             <p data-fr="Accompagnement technique pour le démarrage des équipements."
-               data-en="Technical support for equipment start-up."></p>
+               data-en="Technical support for equipment start-up.">Accompagnement technique pour le démarrage des équipements.</p>
         </div>
 
         <div class="card">
-            <h3 data-fr="Montage mécanique & électrotechnique" data-en="Mechanical & electrical assembly"></h3>
+            <h3 data-fr="Montage mécanique & électrotechnique" data-en="Mechanical & electrical assembly">Montage mécanique & électrotechnique</h3>
             <p data-fr="Assemblage et installation de systèmes."
-               data-en="Assembly and installation of systems."></p>
+               data-en="Assembly and installation of systems.">Assemblage et installation de systèmes.</p>
         </div>
 
         <div class="card">
-            <h3 data-fr="Électricité industrielle et bâtiment" data-en="Industrial & building electricity"></h3>
+            <h3 data-fr="Électricité industrielle et bâtiment" data-en="Industrial & building electricity">Électricité industrielle et bâtiment</h3>
             <p data-fr="Câblage, maintenance et dépannage."
-               data-en="Wiring, maintenance and troubleshooting."></p>
+               data-en="Wiring, maintenance and troubleshooting.">Câblage, maintenance et dépannage.</p>
         </div>
 
         <div class="card">
-            <h3 data-fr="Partenaire local" data-en="Local partner"></h3>
+            <h3 data-fr="Partenaire local" data-en="Local partner">Partenaire local</h3>
             <p data-fr="Distributeur pour clients étrangers."
-               data-en="Distributor and local partner for foreign clients."></p>
+               data-en="Distributor and local partner for foreign clients.">Distributeur pour clients étrangers.</p>
         </div>
 
     </div>
 </section>
 
 <section id="about">
-    <h2 data-fr="À propos" data-en="About"></h2>
+    <h2 data-fr="À propos" data-en="About">À propos</h2>
     <p data-fr="Professionnel expérimenté dans le domaine industriel."
-       data-en="Experienced professional in industrial services."></p>
+       data-en="Experienced professional in industrial services.">Professionnel expérimenté dans le domaine industriel.</p>
 </section>
 
 <section id="contact">
-    <h2 data-fr="Contact" data-en="Contact"></h2>
+    <h2 data-fr="Contact" data-en="Contact">Contact</h2>
     <p>Email : machinaelectro@gmail.com</p>
     <p>Téléphone : 07 62 54 64 05</p>
 </section>
@@ -192,4 +190,4 @@ function setLang(lang) {
 </footer>
 
 </body>
-
+</html>
