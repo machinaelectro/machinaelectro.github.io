@@ -7,39 +7,41 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
- 
+
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
- 
+
   :root {
-    --bg:       #0b0b0b;
-    --bg2:      #111111;
-    --bg3:      #1a1a1a;
-    --border:   rgba(255,255,255,0.15);
-    --border-h: rgba(255,255,255,0.55);
-    --text:     #ffffff;
-    --text-dim: #888888;
+    --bg:        #0b0b0b;
+    --bg2:       #111111;
+    --bg3:       #161616;
+    --accent:    #ff6a00;
+    --accent-dim: rgba(255,106,0,0.08);
+    --border:    rgba(255,255,255,0.1);
+    --border-h:  rgba(255,255,255,0.35);
+    --text:      #f0f0f0;
+    --text-dim:  #777777;
   }
- 
+
   html { scroll-behavior: smooth; }
- 
+
   body {
     font-family: 'Rajdhani', sans-serif;
     background-color: var(--bg);
     color: var(--text);
     overflow-x: hidden;
   }
- 
-  /* ─── CANVAS BACKGROUND ─── */
+
+  /* ─── CANVAS ─── */
   #bg-canvas {
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
     pointer-events: none;
     z-index: 0;
-    opacity: 0.25;
+    opacity: 0.2;
   }
- 
+
   /* ─── HEADER ─── */
   header {
     position: relative;
@@ -47,20 +49,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 28px 30px;
+    padding: 30px 30px;
     background: var(--bg2);
     border-bottom: 1px solid var(--border);
   }
- 
+
   header .logo {
     position: absolute;
     left: 30px;
     width: 80px;
     border-radius: 6px;
   }
- 
+
   .header-text { text-align: center; }
- 
+
   .header-text h1 {
     font-family: 'Orbitron', sans-serif;
     font-size: clamp(1.4rem, 4vw, 2.2rem);
@@ -68,16 +70,18 @@
     color: #ffffff;
     letter-spacing: 0.12em;
   }
- 
+
+  /* Seul élément avec la couleur accent dans le header : le sous-titre */
   .header-text p {
-    font-size: clamp(0.75rem, 2vw, 0.95rem);
-    color: var(--text-dim);
-    letter-spacing: 0.25em;
+    font-size: clamp(0.75rem, 2vw, 0.9rem);
+    color: var(--accent);
+    letter-spacing: 0.3em;
     text-transform: uppercase;
-    margin-top: 6px;
+    margin-top: 7px;
     font-weight: 300;
+    opacity: 0.75;
   }
- 
+
   /* ─── NAV ─── */
   nav {
     position: sticky;
@@ -87,31 +91,31 @@
     justify-content: center;
     align-items: center;
     padding: 0 30px;
-    height: 54px;
-    background: rgba(11,11,11,0.96);
-    backdrop-filter: blur(10px);
+    height: 52px;
+    background: rgba(11,11,11,0.97);
+    backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
   }
- 
-  nav .nav-links { display: flex; gap: 8px; }
- 
+
+  nav .nav-links { display: flex; gap: 4px; }
+
   nav a {
     color: var(--text-dim);
     text-decoration: none;
     font-family: 'Orbitron', sans-serif;
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 0.15em;
-    padding: 8px 16px;
+    padding: 8px 18px;
     border-radius: 4px;
     transition: color 0.2s, background 0.2s;
   }
- 
+
   nav a:hover {
     color: #ffffff;
-    background: rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.07);
   }
- 
+
   .lang {
     position: absolute;
     right: 30px;
@@ -119,22 +123,21 @@
     align-items: center;
     gap: 8px;
   }
- 
+
   .lang img {
-    width: 28px;
-    height: 20px;
+    width: 28px; height: 20px;
     cursor: pointer;
     border: 1px solid var(--border);
     border-radius: 3px;
     object-fit: cover;
     transition: border-color 0.2s, transform 0.2s;
   }
- 
+
   .lang img:hover {
-    border-color: #ffffff;
+    border-color: rgba(255,255,255,0.5);
     transform: scale(1.1);
   }
- 
+
   /* ─── SECTIONS ─── */
   section {
     position: relative;
@@ -143,92 +146,95 @@
     max-width: 1100px;
     margin: 0 auto;
   }
- 
+
+  /* Titres de section : blanc avec barre accent bleue */
   h2 {
     font-family: 'Orbitron', sans-serif;
-    font-size: clamp(1rem, 3vw, 1.3rem);
+    font-size: clamp(1rem, 3vw, 1.25rem);
     font-weight: 600;
     letter-spacing: 0.15em;
     color: #ffffff;
-    border-left: 3px solid #ffffff;
+    border-left: 3px solid var(--accent);
     padding-left: 14px;
     margin-bottom: 40px;
   }
- 
-  /* ─── SERVICES GRID ─── */
+
+  /* ─── SERVICES ─── */
   .services {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
+    gap: 18px;
   }
- 
+
   .card {
     background: var(--bg3);
     border: 1px solid var(--border);
     border-radius: 10px;
-    padding: 30px 24px;
+    padding: 28px 22px;
     position: relative;
     overflow: hidden;
     transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
   }
- 
+
+  /* Fine ligne accent en haut de chaque carte au hover */
   .card::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #ffffff, transparent);
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
     opacity: 0;
     transition: opacity 0.3s;
   }
- 
+
   .card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-5px);
     border-color: var(--border-h);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+    box-shadow: 0 14px 40px rgba(0,0,0,0.55);
   }
- 
+
   .card:hover::before { opacity: 1; }
- 
+
   .card-icon {
-    font-size: 2rem;
+    font-size: 1.9rem;
     margin-bottom: 14px;
     display: block;
   }
- 
+
+  /* Titres de carte en blanc, pas en bleu */
   .card h3 {
     font-family: 'Orbitron', sans-serif;
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 0.08em;
     color: #ffffff;
-    margin-bottom: 12px;
-    line-height: 1.4;
+    margin-bottom: 10px;
+    line-height: 1.45;
   }
- 
+
   .card p {
-    font-size: 0.95rem;
+    font-size: 0.93rem;
     font-weight: 300;
     color: var(--text-dim);
-    line-height: 1.6;
+    line-height: 1.65;
   }
- 
+
   /* ─── ABOUT ─── */
   #about p {
     font-size: 1.05rem;
     color: var(--text-dim);
-    line-height: 1.8;
+    line-height: 1.85;
     max-width: 680px;
     font-weight: 300;
   }
- 
+
   /* ─── CONTACT ─── */
   .contact-grid {
     display: flex;
     flex-direction: column;
     gap: 12px;
   }
- 
+
   .contact-item {
     display: flex;
     align-items: center;
@@ -240,51 +246,53 @@
     max-width: 420px;
     transition: border-color 0.2s;
   }
- 
+
   .contact-item:hover { border-color: var(--border-h); }
- 
+
+  /* Label en bleu accent, valeur en blanc */
   .contact-label {
     font-family: 'Orbitron', sans-serif;
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    color: var(--text-dim);
-    min-width: 70px;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    opacity: 0.8;
+    min-width: 60px;
   }
- 
+
   .contact-value {
     font-size: 0.95rem;
     color: #ffffff;
     font-weight: 400;
   }
- 
+
   /* ─── DIVIDER ─── */
   .divider {
     width: 100%;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
     position: relative;
     z-index: 5;
   }
- 
+
   /* ─── FOOTER ─── */
   footer {
     position: relative;
     z-index: 5;
     text-align: center;
-    padding: 30px;
+    padding: 28px;
     background: var(--bg2);
     border-top: 1px solid var(--border);
     font-family: 'Orbitron', sans-serif;
-    font-size: 0.65rem;
+    font-size: 0.62rem;
     letter-spacing: 0.2em;
     color: var(--text-dim);
   }
 </style>
 </head>
 <body>
- 
+
 <canvas id="bg-canvas"></canvas>
- 
+
 <header>
   <img src="logo.jpg" class="logo" alt="Machina Electro logo">
   <div class="header-text">
@@ -293,7 +301,7 @@
        data-en="Industrial and technical services">Prestations de services industrielles et techniques</p>
   </div>
 </header>
- 
+
 <nav>
   <div class="nav-links">
     <a href="#services" data-fr="Services"  data-en="Services">Services</a>
@@ -305,11 +313,11 @@
     <img src="https://flagcdn.com/w40/gb.png" onclick="setLang('en')" title="English"  alt="EN">
   </div>
 </nav>
- 
+
 <section id="services">
   <h2 data-fr="Nos Services" data-en="Our Services">Nos Services</h2>
   <div class="services">
- 
+
     <div class="card">
       <span class="card-icon">⚡</span>
       <h3 data-fr="Aide à la mise en service"
@@ -318,7 +326,7 @@
          data-en="Technical support for equipment start-up and commissioning on industrial sites.">
         Accompagnement technique pour le démarrage et la mise en route des équipements industriels.</p>
     </div>
- 
+
     <div class="card">
       <span class="card-icon">🔧</span>
       <h3 data-fr="Montage mécanique & électrotechnique"
@@ -327,7 +335,7 @@
          data-en="Assembly, installation and wiring of mechanical and electrical systems.">
         Assemblage, installation et câblage de systèmes mécaniques et électriques.</p>
     </div>
- 
+
     <div class="card">
       <span class="card-icon">🏭</span>
       <h3 data-fr="Électricité industrielle & bâtiment"
@@ -336,7 +344,7 @@
          data-en="Wiring, preventive and corrective maintenance, on-site troubleshooting.">
         Câblage, maintenance préventive et corrective, dépannage sur site.</p>
     </div>
- 
+
     <div class="card">
       <span class="card-icon">🌐</span>
       <h3 data-fr="Partenaire local"
@@ -345,12 +353,12 @@
          data-en="Local representation and distribution for foreign clients operating in France.">
         Représentation et distribution locale pour les clients étrangers sur le territoire français.</p>
     </div>
- 
+
   </div>
 </section>
- 
+
 <div class="divider"></div>
- 
+
 <section id="about">
   <h2 data-fr="À propos" data-en="About">À propos</h2>
   <p data-fr="Professionnel expérimenté dans le domaine industriel, MACHINA ELECTRO intervient sur des missions techniques variées avec rigueur et réactivité. Notre expertise couvre l'électrotechnique, la mécanique et la mise en service d'installations complexes."
@@ -358,9 +366,9 @@
     Professionnel expérimenté dans le domaine industriel, MACHINA ELECTRO intervient sur des missions techniques variées avec rigueur et réactivité. Notre expertise couvre l'électrotechnique, la mécanique et la mise en service d'installations complexes.
   </p>
 </section>
- 
+
 <div class="divider"></div>
- 
+
 <section id="contact">
   <h2 data-fr="Contact" data-en="Contact">Contact</h2>
   <div class="contact-grid">
@@ -374,31 +382,31 @@
     </div>
   </div>
 </section>
- 
+
 <footer>
   <p>© 2026 MACHINA ELECTRO — Tous droits réservés</p>
 </footer>
- 
+
 <script>
   function setLang(lang) {
     document.querySelectorAll('[data-fr]').forEach(el => {
       el.textContent = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
     });
   }
- 
+
   const canvas = document.getElementById('bg-canvas');
   const ctx = canvas.getContext('2d');
- 
+
   function resize() {
     canvas.width  = window.innerWidth;
     canvas.height = window.innerHeight;
   }
   resize();
   window.addEventListener('resize', resize);
- 
+
   const COLS = 40;
   let nodes = [];
- 
+
   function initNodes() {
     nodes = [];
     const cols = Math.ceil(canvas.width  / COLS) + 1;
@@ -413,12 +421,12 @@
   }
   initNodes();
   window.addEventListener('resize', initNodes);
- 
+
   let t = 0;
   function drawGrid() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
- 
-    ctx.strokeStyle = 'rgba(255,255,255,0.05)';
+
+    ctx.strokeStyle = 'rgba(255,255,255,0.04)';
     ctx.lineWidth = 0.5;
     for (let x = 0; x < canvas.width; x += COLS) {
       ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, canvas.height); ctx.stroke();
@@ -426,15 +434,15 @@
     for (let y = 0; y < canvas.height; y += COLS) {
       ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(canvas.width, y); ctx.stroke();
     }
- 
+
     nodes.forEach(n => {
-      const alpha = 0.2 + 0.6 * (0.5 + 0.5 * Math.sin(t * 0.8 + n.pulse));
-      ctx.fillStyle = `rgba(255,255,255,${alpha * 0.6})`;
+      const alpha = 0.2 + 0.5 * (0.5 + 0.5 * Math.sin(t * 0.8 + n.pulse));
+      ctx.fillStyle = `rgba(255,255,255,${alpha * 0.5})`;
       ctx.beginPath();
       ctx.arc(n.x, n.y, 1.5, 0, Math.PI * 2);
       ctx.fill();
     });
- 
+
     t += 0.016;
     requestAnimationFrame(drawGrid);
   }
