@@ -1,200 +1,195 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MACHINA ELECTRO</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0b0b0b;
-            color: #ffffff;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MACHINA ELECTRO</title>
 
-        header {
-            text-align: center;
-            padding: 60px 20px;
-            background-color: #0a0f24;
-        }
+https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap
 
-        header h1 {
-            font-size: 3em;
-            margin: 0;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background-color: #0b0b0b;
+    color: #ffffff;
+}
 
-        header p {
-            color: #cccccc;
-            margin-top: 10px;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #001f3f;
-            padding: 15px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            color: #00c3ff;
-        }
-
-        section {
-            padding: 50px 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        h2 {
-            border-left: 4px solid #00c3ff;
-            padding-left: 10px;
-        }
-
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .card {
-            background-color: #1a1a1a;
-            padding: 25px;
-            border-radius: 15px;
-            text-align: center;
-            border: 2px solid white;
-            transition: 0.3s;
-        }
-        
-        .card:hover {
-            border-color: #00c3ff;
-            box-shadow: 0 0 25px rgba(0, 195, 255, 0.6);
-            transform: translateY(-5px);
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            background-color: #111;
-            margin-top: 40px;
-        }
-
-        button {
-            background: #00c3ff;
-            border: none;
-            padding: 12px 20px;
-            color: black;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #0099cc;
-        }
-
-       header {
+header {
     display: flex;
     align-items: center;
-    justify-content: center; /* Centre le texte */
-    position: relative;      /* Permet de placer le logo sans décaler le centre */
+    justify-content: center;
+    position: relative;
     padding: 20px;
     background-color: #0a0f24;
-    }
-    
-    /* Logo fixé à gauche */
-    header .logo {
-        position: absolute;
-        left: 20px;
-        width: 90px;
-        height: auto;
-    }
-    
-    /* Texte centré */
-    .header-text {
-        text-align: center;
-    }
-    
-    .header-text h1 {
-        margin: 0;
-        font-size: 2rem;
-    }
-    
-    .header-text p {
-        margin: 5px 0 0 0;
-    }
-        
-    </style>
+}
+
+header .logo {
+    position: absolute;
+    left: 20px;
+    width: 90px;
+}
+
+.header-text {
+    text-align: center;
+}
+
+.header-text h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #00c3ff;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #001f3f;
+    padding: 15px;
+    position: relative;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+/* Drapeaux */
+.lang {
+    position: absolute;
+    right: 20px;
+}
+
+.lang img {
+    width: 30px;
+    cursor: pointer;
+    margin-left: 10px;
+    border: 1px solid white;
+}
+
+section {
+    padding: 50px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+h2 {
+    border-left: 4px solid #00c3ff;
+    padding-left: 10px;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card {
+    background-color: #1a1a1a;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid white;
+    transition: 0.3s;
+}
+
+.card:hover {
+    border-color: #00c3ff;
+    box-shadow: 0 0 25px rgba(0, 195, 255, 0.6);
+    transform: translateY(-5px);
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #111;
+    margin-top: 40px;
+}
+</style>
+
+<script>
+function setLang(lang) {
+    document.querySelectorAll('[data-fr]').forEach(el => {
+        el.innerText = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
+    });
+}
+</script>
+
 </head>
+
 <body>
 
 <header>
-    <img src="logo.jpg" alt="Logo Machina Electro" class="logo">
+    <img src="logo.jpg" class="logo">
 
     <div class="header-text">
-        <h1>MACHINA ELECTRO</h1>
-        <p>Prestations de services industrielles et techniques</p>
+        <h1 data-fr="MACHINA ELECTRO" data-en="MACHINA ELECTRO">MACHINA ELECTRO</h1>
+        <p data-fr="Prestations de services industrielles et techniques" 
+           data-en="Industrial and technical services">
+        </p>
     </div>
 </header>
 
 <nav>
     <a href="#services">Services</a>
     <a href="#about">À propos</a>
-    <a href="#contact">Contact</a>
+    ">Contact</a>
+
+    <div class="lang">
+        https://flagcdn.com/w40/fr.png
+        https://flagcdn.com/w40/gb.png">
+    </div>
 </nav>
 
 <section id="services">
-    <h2>Nos Services</h2>
+    <h2 data-fr="Nos Services" data-en="Our Services"></h2>
+
     <div class="services">
+
         <div class="card">
-            <h3>Aide à la mise en service</h3>
-            <p>Accompagnement technique pour le démarrage et l'installation de vos équipements industriels.</p>
+            <h3 data-fr="Aide à la mise en service" data-en="Commissioning support"></h3>
+            <p data-fr="Accompagnement technique pour le démarrage des équipements."
+               data-en="Technical support for equipment start-up."></p>
         </div>
 
         <div class="card">
-            <h3>Montage mécanique & électrotechnique</h3>
-            <p>Assemblage, installation et mise en place de systèmes mécaniques et électrotechniques.</p>
+            <h3 data-fr="Montage mécanique & électrotechnique" data-en="Mechanical & electrical assembly"></h3>
+            <p data-fr="Assemblage et installation de systèmes."
+               data-en="Assembly and installation of systems."></p>
         </div>
 
         <div class="card">
-            <h3>Électricité industrielle et batiment</h3>
-            <p>Interventions sur installations industrielles : câblage, maintenance et dépannage.</p>
+            <h3 data-fr="Électricité industrielle et bâtiment" data-en="Industrial & building electricity"></h3>
+            <p data-fr="Câblage, maintenance et dépannage."
+               data-en="Wiring, maintenance and troubleshooting."></p>
         </div>
 
         <div class="card">
-            <h3>Patenaire local</h3>
-            <p>Distributeur et partenaire local pour clients étrangers.</p>
+            <h3 data-fr="Partenaire local" data-en="Local partner"></h3>
+            <p data-fr="Distributeur pour clients étrangers."
+               data-en="Distributor and local partner for foreign clients."></p>
         </div>
+
     </div>
 </section>
 
 <section id="about">
-    <h2>À propos</h2>
-    <p>
-        Professionnel expérimenté dans les domaines techniques et industriels, je propose des prestations de services adaptées à vos besoins.
-        Sérieux, réactif et rigoureux, j'accompagne mes clients dans la réussite de leurs projets.
-    </p>
+    <h2 data-fr="À propos" data-en="About"></h2>
+    <p data-fr="Professionnel expérimenté dans le domaine industriel."
+       data-en="Experienced professional in industrial services."></p>
 </section>
 
 <section id="contact">
-    <h2>Contact</h2>
+    <h2 data-fr="Contact" data-en="Contact"></h2>
     <p>Email : machinaelectro@gmail.com</p>
     <p>Téléphone : 07 62 54 64 05</p>
-    <br>
-    <button onclick="alert('Merci de me contacter par email ou téléphone')">Me contacter</button>
 </section>
 
 <footer>
-    <p>© 2026 Votre Entreprise - Tous droits réservés</p>
+    <p>© 2026 MACHINA ELECTRO</p>
 </footer>
 
 </body>
-</html>
+
