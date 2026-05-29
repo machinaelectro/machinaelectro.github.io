@@ -220,12 +220,64 @@
   }
 
   /* ─── ABOUT ─── */
+  .about-inner {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .about-text {
+    flex: 1;
+  }
+
   #about p {
     font-size: 1.05rem;
     color: var(--text-dim);
     line-height: 1.85;
-    max-width: 680px;
     font-weight: 300;
+  }
+
+  .about-photo-wrap {
+    flex-shrink: 0;
+    position: relative;
+    width: 200px;
+    height: 220px;
+  }
+
+  /* Cadre orange décalé derrière la photo */
+  .about-photo-wrap::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    right: -12px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--accent);
+    border-radius: 6px;
+    z-index: 0;
+  }
+
+  .about-photo-wrap img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+    filter: grayscale(20%);
+  }
+
+  @media (max-width: 620px) {
+    .about-inner {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+    }
+    .about-photo-wrap {
+      width: 150px;
+      height: 165px;
+      margin: 0 auto;
+    }
   }
 
   /* ─── CONTACT ─── */
@@ -361,10 +413,17 @@
 
 <section id="about">
   <h2 data-fr="À propos" data-en="About">À propos</h2>
-  <p data-fr="Professionnel expérimenté dans le domaine industriel, MACHINA ELECTRO intervient sur des missions techniques variées avec rigueur et réactivité. Notre expertise couvre l'électrotechnique, la mécanique et la mise en service d'installations complexes."
-     data-en="An experienced professional in the industrial field, MACHINA ELECTRO handles a wide range of technical assignments with precision and responsiveness. Our expertise spans electrical engineering, mechanics, and the commissioning of complex installations.">
-    Professionnel expérimenté dans le domaine industriel, MACHINA ELECTRO intervient sur des missions techniques variées avec rigueur et réactivité. Notre expertise couvre l'électrotechnique, la mécanique et la mise en service d'installations complexes.
-  </p>
+  <div class="about-inner">
+    <div class="about-text">
+      <p data-fr="Professionnel expérimenté dans le domaine industriel, MACHINA ELECTRO intervient sur des missions techniques variées avec rigueur et réactivité. Notre expertise couvre l'électrotechnique, la mécanique et la mise en service d'installations complexes."
+         data-en="An experienced professional in the industrial field, MACHINA ELECTRO handles a wide range of technical assignments with precision and responsiveness. Our expertise spans electrical engineering, mechanics, and the commissioning of complex installations.">
+        Professionnel expérimenté dans le domaine industriel, MACHINA ELECTRO intervient sur des missions techniques variées avec rigueur et réactivité. Notre expertise couvre l'électrotechnique, la mécanique et la mise en service d'installations complexes.
+      </p>
+    </div>
+    <div class="about-photo-wrap">
+      <img src="Lolo.jpg" alt="Photo de profil">
+    </div>
+  </div>
 </section>
 
 <div class="divider"></div>
