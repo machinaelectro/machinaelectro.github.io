@@ -101,19 +101,6 @@
       width: 100%;
     }
 
-    .new-header-logo {
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .new-header-logo img {
-      width: 100px;
-      height: auto;
-      border-radius: 6px;
-    }
-
     .new-header-title {
       display: flex;
       flex-direction: column;
@@ -353,10 +340,6 @@
         padding-left: 0;
         align-items: center;
       }
-
-      .new-header-logo {
-        justify-content: center;
-      }
     }
 
     @media (max-width: 620px) {
@@ -449,15 +432,12 @@
 
 <canvas id="bg-canvas"></canvas>
 
-<!-- NOUVEL EN-TÊTE -->
+<!-- NOUVEL EN-TÊTE SANS LE VIEUX LOGO -->
 <header class="new-header">
   <div class="new-header-content">
-    <div class="new-header-logo">
-      <img src="Logo.png" alt="Logo Ilux Electro - Prestations industrielles et techniques en France">
-      <div class="new-header-title">
-        <h1>i<span>l</span>ux <span>E</span>lectro</h1>
-        <p>Prestations de services industrielles et techniques</p>
-      </div>
+    <div class="new-header-title">
+      <h1>i<span>l</span>ux <span>E</span>lectro</h1>
+      <p>Prestations de services industrielles et techniques</p>
     </div>
     <div class="new-header-services">
       <h2>Montage<br><span>Mise en service</span><br>Dépannage<br><span>Électrotechnique</span></h2>
