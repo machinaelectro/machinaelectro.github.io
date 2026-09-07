@@ -90,12 +90,12 @@
       padding: 40px 30px;
       background: var(--bg);
       border-bottom: 1px solid var(--border);
-      min-height: 200px;
+      min-height: 180px;
     }
 
     .new-header-content {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 40px;
       max-width: 1200px;
       width: 100%;
@@ -105,6 +105,8 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      position: relative;
+      top: 10px; /* Ajustement pour aligner le "I" avec la barre orange */
     }
 
     .new-header-title h1 {
@@ -113,12 +115,19 @@
       font-weight: 700;
       color: #ffffff;
       letter-spacing: 0.05em;
-      line-height: 1;
+      line-height: 0.9;
       margin: 0;
     }
 
-    .new-header-title h1 span {
+    .new-header-title h1 .i-letter {
       color: var(--orange);
+      display: inline-block;
+      vertical-align: baseline;
+      line-height: 1;
+    }
+
+    .new-header-title h1 .lux-electro {
+      color: #ffffff;
     }
 
     .new-header-title p {
@@ -134,10 +143,9 @@
     .new-header-services {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: flex-start;
-      border-left: 1px solid rgba(255, 255, 255, 0.2);
-      padding-left: 40px;
+      padding-left: 20px;
     }
 
     .new-header-services h2 {
@@ -147,6 +155,19 @@
       color: #ffffff;
       margin: 0 0 10px 0;
       line-height: 1.2;
+      position: relative;
+      padding-left: 10px;
+    }
+
+    .new-header-services h2::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 3px;
+      height: 60%;
+      background-color: var(--orange);
     }
 
     .new-header-services h2 span {
@@ -340,6 +361,10 @@
         padding-left: 0;
         align-items: center;
       }
+
+      .new-header-title {
+        align-items: center;
+      }
     }
 
     @media (max-width: 620px) {
@@ -432,11 +457,13 @@
 
 <canvas id="bg-canvas"></canvas>
 
-<!-- NOUVEL EN-TÊTE SANS LE VIEUX LOGO -->
+<!-- NOUVEL EN-TÊTE AVEC ALIGNEMENT DU "I" -->
 <header class="new-header">
   <div class="new-header-content">
     <div class="new-header-title">
-      <h1>i<span>l</span>ux <span>E</span>lectro</h1>
+      <h1>
+        <span class="i-letter">I</span><span class="lux-electro">lux Electro</span>
+      </h1>
       <p>Prestations de services industrielles et techniques</p>
     </div>
     <div class="new-header-services">
@@ -461,7 +488,6 @@
 <section id="services">
   <h2 data-fr="Nos Services" data-en="Our Services">Nos Services</h2>
   <div class="services">
-
     <div class="card">
       <span class="card-icon">⚡</span>
       <h3 data-fr="Aide à la mise en service" data-en="Commissioning support">Aide à la mise en service</h3>
@@ -524,7 +550,7 @@
   <div class="contact-grid">
     <div class="contact-item">
       <span class="contact-label">EMAIL</span>
-      <span class="contact-value"><a href="mailto:machinaelectro@gmail.com">machinaelectro@gmail.com</a></span>
+      <span class="contact-value"><a href="mailto:machinaelectro@gmail.com">loris.arnaud@iluxelectro.fr</a></span>
     </div>
     <div class="contact-item">
       <span class="contact-label">TÉL</span>
