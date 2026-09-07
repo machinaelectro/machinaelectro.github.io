@@ -1,362 +1,467 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Prestations de services industrielles et techniques - Ilux Electro">
-<meta property="og:title" content="Ilux Electro">
-<meta property="og:description" content="Prestations de services industrielles et techniques">
-<meta property="og:image" content="Logo.png">
-<title>Ilux Electro</title>
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Balises de base -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <!-- Balises SEO (Référencement) -->
+  <title>Ilux Electro | Prestations industrielles et techniques</title>
+  <meta name="description" content="Ilux Electro propose des prestations de services industrielles et techniques : électrotechnique, mécanique, mise en service d'installations complexes. Expertise et réactivité pour vos projets en France.">
+  <meta name="keywords" content="électrotechnique, mécanique industrielle, mise en service, maintenance, dépannage, Ilux Electro, prestations industrielles, services techniques, électricité industrielle, câblage, partenariat local">
+  <meta name="author" content="Ilux Electro">
+  <meta name="robots" content="index, follow">
+  <meta name="revisit-after" content="7 days">
 
-  :root {
-    --bg:        #0b0b0b;
-    --bg2:       #111111;
-    --bg3:       #161616;
-    --accent:    #ff6a00;
-    --accent-dim: rgba(255,106,0,0.08);
-    --border:    rgba(255,255,255,0.1);
-    --border-h:  rgba(255,255,255,0.35);
-    --text:      #f0f0f0;
-    --text-dim:  #a0a0a0;
-  }
+  <!-- Open Graph (pour les réseaux sociaux) -->
+  <meta property="og:title" content="Ilux Electro | Prestations industrielles et techniques">
+  <meta property="og:description" content="Expertise en électrotechnique, mécanique et mise en service d'installations complexes pour les professionnels.">
+  <meta property="og:url" content="https://www.iluxelectro.fr">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.iluxelectro.fr/Logo.png">
+  <meta property="og:site_name" content="Ilux Electro">
+  <meta property="og:locale" content="fr_FR">
 
-  html { scroll-behavior: smooth; }
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ilux Electro | Prestations industrielles et techniques">
+  <meta name="twitter:description" content="Expertise en électrotechnique, mécanique et mise en service d'installations complexes.">
+  <meta name="twitter:image" content="https://www.iluxelectro.fr/Logo.png">
 
-  body {
-    font-family: 'Rajdhani', sans-serif;
-    background-color: var(--bg);
-    color: var(--text);
-    overflow-x: hidden;
-  }
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-  /* ─── CANVAS ─── */
-  #bg-canvas {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.2;
-  }
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.iluxelectro.fr">
 
-  /* ─── HEADER ─── */
-  header {
-    position: relative;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 30px 30px;
-    background: var(--bg2);
-    border-bottom: 1px solid var(--border);
-  }
+  <!-- Préconnexion aux ressources externes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  header .logo {
-    position: absolute;
-    left: 30px;
-    width: 80px;
-    border-radius: 6px;
-  }
+  <!-- Polices Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
 
-  .header-text { text-align: center; }
+  <!-- Balise de vérification Google Search Console -->
+  <meta name="google-site-verification" content="hMrotIVpLYc5Fkw7C-m5GgC76SETUq8UNf9oCpu0yY">
 
-  .header-text h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: clamp(1.4rem, 4vw, 2.2rem);
-    font-weight: 700;
-    color: #ffffff;
-    letter-spacing: 0.12em;
-  }
+  <!-- Style CSS -->
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  .header-text p {
-    font-size: clamp(0.75rem, 2vw, 0.9rem);
-    color: var(--accent);
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    margin-top: 7px;
-    font-weight: 300;
-    opacity: 0.75;
-  }
+    :root {
+      --bg:        #0b0b0b;
+      --bg2:       #111111;
+      --bg3:       #161616;
+      --accent:    #ff6a00;
+      --accent-dim: rgba(255,106,0,0.08);
+      --border:    rgba(255,255,255,0.1);
+      --border-h:  rgba(255,255,255,0.35);
+      --text:      #f0f0f0;
+      --text-dim:  #a0a0a0;
+      --orange:    #ff6a00;
+    }
 
-  /* ─── NAV ─── */
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 30px;
-    height: 52px;
-    background: rgba(11,11,11,0.97);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-  }
+    html { scroll-behavior: smooth; }
 
-  nav .nav-links { display: flex; gap: 4px; }
+    body {
+      font-family: 'Rajdhani', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
 
-  nav a {
-    color: var(--text-dim);
-    text-decoration: none;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    padding: 8px 18px;
-    border-radius: 4px;
-    transition: color 0.2s, background 0.2s, transform 0.2s;
-  }
+    /* ─── CANVAS ─── */
+    #bg-canvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.2;
+    }
 
-  nav a:hover {
-    color: #ffffff;
-    background: rgba(255,255,255,0.07);
-    transform: scale(1.05);
-  }
+    /* ─── NOUVEL EN-TÊTE ─── */
+    .new-header {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 30px;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      min-height: 200px;
+    }
 
-  .lang {
-    position: absolute;
-    right: 30px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
+    .new-header-content {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      max-width: 1200px;
+      width: 100%;
+    }
 
-  .lang img {
-    width: 28px; height: 20px;
-    cursor: pointer;
-    border: 1px solid var(--border);
-    border-radius: 3px;
-    object-fit: cover;
-    transition: border-color 0.2s, transform 0.2s;
-  }
+    .new-header-logo {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
 
-  .lang img:hover {
-    border-color: rgba(255,255,255,0.5);
-    transform: scale(1.1);
-  }
+    .new-header-logo img {
+      width: 100px;
+      height: auto;
+      border-radius: 6px;
+    }
 
-  /* ─── SECTIONS ─── */
-  section {
-    position: relative;
-    z-index: 5;
-    padding: 80px 30px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  h2 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: clamp(1rem, 3vw, 1.25rem);
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    color: #ffffff;
-    border-left: 3px solid var(--accent);
-    padding-left: 14px;
-    margin-bottom: 40px;
-  }
-
-  /* ─── SERVICES ─── */
-  .services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 18px;
-  }
-
-  .card {
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 28px 22px;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-  }
-
-  .card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--accent), transparent);
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-
-  .card:hover {
-    transform: translateY(-5px);
-    border-color: var(--border-h);
-    box-shadow: 0 14px 40px rgba(0,0,0,0.55);
-  }
-
-  .card:hover::before { opacity: 1; }
-
-  .card-icon {
-    font-size: 1.9rem;
-    margin-bottom: 14px;
-    display: block;
-  }
-
-  .card h3 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    color: #ffffff;
-    margin-bottom: 10px;
-    line-height: 1.45;
-  }
-
-  .card p {
-    font-size: 0.93rem;
-    font-weight: 300;
-    color: var(--text-dim);
-    line-height: 1.65;
-  }
-
-  /* ─── ABOUT ─── */
-  .about-inner {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-  }
-
-  .about-text {
-    flex: 1;
-  }
-
-  #about p {
-    font-size: 1.05rem;
-    color: var(--text-dim);
-    line-height: 1.85;
-    font-weight: 300;
-  }
-
-  .about-photo-wrap {
-    flex-shrink: 0;
-    position: relative;
-    width: 210px;
-    height: 230px;
-    border: 2px solid var(--accent);
-    border-radius: 10px;
-    box-shadow:
-      0 0 0 1px rgba(255,106,0,0.25),
-      0 0 18px rgba(255,106,0,0.35),
-      0 0 50px rgba(255,106,0,0.12),
-      0 20px 50px rgba(0,0,0,0.7);
-    overflow: hidden;
-  }
-
-  .about-photo-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  @media (max-width: 620px) {
-    .about-inner {
-      flex-direction: column-reverse;
+    .new-header-title {
+      display: flex;
+      flex-direction: column;
       align-items: flex-start;
     }
-    .about-photo-wrap {
-      width: 150px;
-      height: 165px;
+
+    .new-header-title h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 0.05em;
+      line-height: 1;
+      margin: 0;
+    }
+
+    .new-header-title h1 span {
+      color: var(--orange);
+    }
+
+    .new-header-title p {
+      font-size: clamp(0.8rem, 2vw, 1rem);
+      color: var(--orange);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-top: 10px;
+      font-weight: 300;
+      opacity: 0.9;
+    }
+
+    .new-header-services {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      border-left: 1px solid rgba(255, 255, 255, 0.2);
+      padding-left: 40px;
+    }
+
+    .new-header-services h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      font-weight: 600;
+      color: #ffffff;
+      margin: 0 0 10px 0;
+      line-height: 1.2;
+    }
+
+    .new-header-services h2 span {
+      color: var(--orange);
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 30px;
+      height: 52px;
+      background: rgba(11,11,11,0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav .nav-links { display: flex; gap: 4px; }
+
+    nav a {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      padding: 8px 18px;
+      border-radius: 4px;
+      transition: color 0.2s, background 0.2s, transform 0.2s;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+      background: rgba(255,255,255,0.07);
+      transform: scale(1.05);
+    }
+
+    .lang {
+      position: absolute;
+      right: 30px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .lang img {
+      width: 28px; height: 20px;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      object-fit: cover;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .lang img:hover {
+      border-color: rgba(255,255,255,0.5);
+      transform: scale(1.1);
+    }
+
+    /* ─── SECTIONS ─── */
+    section {
+      position: relative;
+      z-index: 5;
+      padding: 80px 30px;
+      max-width: 1100px;
       margin: 0 auto;
     }
-  }
 
-  /* ─── CONTACT ─── */
-  .contact-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
+    h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1rem, 3vw, 1.25rem);
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      color: #ffffff;
+      border-left: 3px solid var(--accent);
+      padding-left: 14px;
+      margin-bottom: 40px;
+    }
 
-  .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 16px 22px;
-    max-width: 420px;
-    transition: border-color 0.2s;
-  }
+    /* ─── SERVICES ─── */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+    }
 
-  .contact-item:hover { border-color: var(--border-h); }
+    .card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 28px 22px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    }
 
-  .contact-label {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.62rem;
-    letter-spacing: 0.18em;
-    color: var(--accent);
-    opacity: 0.8;
-    min-width: 60px;
-  }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
 
-  .contact-value {
-    font-size: 0.95rem;
-    color: #ffffff;
-    font-weight: 400;
-  }
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--border-h);
+      box-shadow: 0 14px 40px rgba(0,0,0,0.55);
+    }
 
-  .contact-value a {
-    color: inherit;
-    text-decoration: none;
-  }
+    .card:hover::before { opacity: 1; }
 
-  .contact-value a:hover {
-    text-decoration: underline;
-  }
+    .card-icon {
+      font-size: 1.9rem;
+      margin-bottom: 14px;
+      display: block;
+    }
 
-  /* ─── DIVIDER ─── */
-  .divider {
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-    position: relative;
-    z-index: 5;
-  }
+    .card h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: #ffffff;
+      margin-bottom: 10px;
+      line-height: 1.45;
+    }
 
-  /* ─── FOOTER ─── */
-  footer {
-    position: relative;
-    z-index: 5;
-    text-align: center;
-    padding: 28px;
-    background: var(--bg2);
-    border-top: 1px solid var(--border);
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.62rem;
-    letter-spacing: 0.2em;
-    color: var(--text-dim);
-  }
+    .card p {
+      font-size: 0.93rem;
+      font-weight: 300;
+      color: var(--text-dim);
+      line-height: 1.65;
+    }
 
-  @media (max-width: 400px) {
-    section { padding: 40px 15px; }
-    .card { padding: 20px 15px; }
-  }
-</style>
+    /* ─── ABOUT ─── */
+    .about-inner {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    #about p {
+      font-size: 1.05rem;
+      color: var(--text-dim);
+      line-height: 1.85;
+      font-weight: 300;
+    }
+
+    .about-photo-wrap {
+      flex-shrink: 0;
+      position: relative;
+      width: 210px;
+      height: 230px;
+      border: 2px solid var(--accent);
+      border-radius: 10px;
+      box-shadow:
+        0 0 0 1px rgba(255,106,0,0.25),
+        0 0 18px rgba(255,106,0,0.35),
+        0 0 50px rgba(255,106,0,0.12),
+        0 20px 50px rgba(0,0,0,0.7);
+      overflow: hidden;
+    }
+
+    .about-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (max-width: 900px) {
+      .new-header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
+
+      .new-header-services {
+        border-left: none;
+        padding-left: 0;
+        align-items: center;
+      }
+
+      .new-header-logo {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .about-inner {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+      }
+      .about-photo-wrap {
+        width: 150px;
+        height: 165px;
+        margin: 0 auto;
+      }
+    }
+
+    /* ─── CONTACT ─── */
+    .contact-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 22px;
+      max-width: 420px;
+      transition: border-color 0.2s;
+    }
+
+    .contact-item:hover { border-color: var(--border-h); }
+
+    .contact-label {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      opacity: 0.8;
+      min-width: 60px;
+    }
+
+    .contact-value {
+      font-size: 0.95rem;
+      color: #ffffff;
+      font-weight: 400;
+    }
+
+    .contact-value a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .contact-value a:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── DIVIDER ─── */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      position: relative;
+      z-index: 5;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      position: relative;
+      z-index: 5;
+      text-align: center;
+      padding: 28px;
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      color: var(--text-dim);
+    }
+
+    @media (max-width: 400px) {
+      section { padding: 40px 15px; }
+      .card { padding: 20px 15px; }
+    }
+  </style>
 </head>
 <body>
 
 <canvas id="bg-canvas"></canvas>
 
-<header>
-  <img src="Logo.png" class="logo" alt="Ilux Electro logo">
-  <div class="header-text">
-    <h1 data-fr="Ilux Electro" data-en="Ilux Electro">Ilux Electro</h1>
-    <p data-fr="Prestations de services industrielles et techniques"
-       data-en="Industrial and technical services">Prestations de services industrielles et techniques</p>
+<!-- NOUVEL EN-TÊTE -->
+<header class="new-header">
+  <div class="new-header-content">
+    <div class="new-header-logo">
+      <img src="Logo.png" alt="Logo Ilux Electro - Prestations industrielles et techniques en France">
+      <div class="new-header-title">
+        <h1>i<span>l</span>ux <span>E</span>lectro</h1>
+        <p>Prestations de services industrielles et techniques</p>
+      </div>
+    </div>
+    <div class="new-header-services">
+      <h2>Montage<br><span>Mise en service</span><br>Dépannage<br><span>Électrotechnique</span></h2>
+    </div>
   </div>
 </header>
 
@@ -367,8 +472,8 @@
     <a href="#contact"  data-fr="Contact"   data-en="Contact">Contact</a>
   </div>
   <div class="lang">
-    <img src="https://flagcdn.com/w40/fr.png" onclick="setLang('fr')" title="Français" alt="FR">
-    <img src="https://flagcdn.com/w40/gb.png" onclick="setLang('en')" title="English"  alt="EN">
+    <img src="https://flagcdn.com/w40/fr.png" onclick="setLang('fr')" title="Français" alt="Drapeau français - Langue française">
+    <img src="https://flagcdn.com/w40/gb.png" onclick="setLang('en')" title="English"  alt="Drapeau anglais - Langue anglaise">
   </div>
 </nav>
 
@@ -379,40 +484,39 @@
 
     <div class="card">
       <span class="card-icon">⚡</span>
-      <h3 data-fr="Aide à la mise en service"
-          data-en="Commissioning support">Aide à la mise en service</h3>
+      <h3 data-fr="Aide à la mise en service" data-en="Commissioning support">Aide à la mise en service</h3>
       <p data-fr="Accompagnement technique pour le démarrage et la mise en route des équipements industriels."
          data-en="Technical support for equipment start-up and commissioning on industrial sites.">
-        Accompagnement technique pour le démarrage et la mise en route des équipements industriels.</p>
+        Accompagnement technique pour le démarrage et la mise en route des équipements industriels.
+      </p>
     </div>
 
     <div class="card">
       <span class="card-icon">🔧</span>
-      <h3 data-fr="Montage mécanique & électrotechnique"
-          data-en="Mechanical & electrical assembly">Montage mécanique & électrotechnique</h3>
+      <h3 data-fr="Montage mécanique & électrotechnique" data-en="Mechanical & electrical assembly">Montage mécanique & électrotechnique</h3>
       <p data-fr="Assemblage, installation et câblage de systèmes mécaniques et électriques."
          data-en="Assembly, installation and wiring of mechanical and electrical systems.">
-        Assemblage, installation et câblage de systèmes mécaniques et électriques.</p>
+        Assemblage, installation et câblage de systèmes mécaniques et électriques.
+      </p>
     </div>
 
     <div class="card">
       <span class="card-icon">🏭</span>
-      <h3 data-fr="Électricité industrielle & bâtiment"
-          data-en="Industrial & building electricity">Électricité industrielle & bâtiment</h3>
+      <h3 data-fr="Électricité industrielle & bâtiment" data-en="Industrial & building electricity">Électricité industrielle & bâtiment</h3>
       <p data-fr="Câblage, maintenance préventive et corrective, dépannage sur site."
          data-en="Wiring, preventive and corrective maintenance, on-site troubleshooting.">
-        Câblage, maintenance préventive et corrective, dépannage sur site.</p>
+        Câblage, maintenance préventive et corrective, dépannage sur site.
+      </p>
     </div>
 
     <div class="card">
       <span class="card-icon">🌐</span>
-      <h3 data-fr="Partenaire local"
-          data-en="Local partner">Partenaire local</h3>
+      <h3 data-fr="Partenaire local" data-en="Local partner">Partenaire local</h3>
       <p data-fr="Représentation et distribution locale pour les clients étrangers sur le territoire français."
          data-en="Local representation and distribution for foreign clients operating in France.">
-        Représentation et distribution locale pour les clients étrangers sur le territoire français.</p>
+        Représentation et distribution locale pour les clients étrangers sur le territoire français.
+      </p>
     </div>
-
   </div>
 </section>
 
@@ -428,7 +532,7 @@
       </p>
     </div>
     <div class="about-photo-wrap">
-      <img src="Lolo.jpg" alt="Photo de profil Ilux Electro">
+      <img src="Lolo.jpg" alt="Photo de profil Ilux Electro - Expert en prestations industrielles et techniques en France">
     </div>
   </div>
 </section>
