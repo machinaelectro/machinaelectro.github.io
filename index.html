@@ -39,7 +39,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- Polices Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Poppins:wght@600;700;800;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
 
   <!-- Balise de vérification Google Search Console -->
   <meta name="google-site-verification" content="hMrotIVpLYc5Fkw7C-m5GgC76SETUq8UNf9oCpu0yY">
@@ -88,7 +88,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 40px 30px;
+      padding: 50px 30px;
       background: var(--bg);
       border-bottom: 1px solid var(--border);
       min-height: 200px;
@@ -97,93 +97,82 @@
     .new-header-content {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 40px;
+      justify-content: center;
+      gap: 50px;
       max-width: 1200px;
       width: 100%;
     }
 
+    /* Logo "ilux ELECTRO" */
     .new-header-logo {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      flex-shrink: 0;
     }
 
     .new-header-logo .logo-text {
-      font-size: clamp(3rem, 10vw, 6rem);
-      font-weight: 700;
-      line-height: 0.9;
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(3rem, 9vw, 5.5rem);
+      font-weight: 900;
+      line-height: 0.85;
       margin: 0;
-      position: relative;
     }
 
-    .new-header-logo .logo-text .i-letter {
-      color: var(--orange);
-      position: relative;
-    }
-
-    .new-header-logo .logo-text .i-letter::before {
-      content: "●";
-      color: var(--white);
-      position: absolute;
-      left: -15px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 0.5em;
-    }
-
-    .new-header-logo .logo-text .lux {
+    .new-header-logo .lux {
       color: var(--white);
     }
 
-    .new-header-logo .logo-text .electro {
+    .new-header-logo .electro {
+      display: block;
       color: var(--orange);
-      font-size: 0.8em;
-      letter-spacing: 0.1em;
+      font-size: 0.42em;
+      font-weight: 800;
+      letter-spacing: 0.42em;
+      margin-top: 0.32em;
     }
 
+    /* Séparateur vertical entre le logo et la liste de services */
+    .new-header-divider {
+      width: 2px;
+      align-self: stretch;
+      background: rgba(255,255,255,0.55);
+      flex-shrink: 0;
+    }
+
+    /* Liste des services */
     .new-header-services {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
       position: relative;
-      padding-left: 20px;
+      padding: 18px 0 18px 26px;
     }
 
     .new-header-services::before,
     .new-header-services::after {
       content: '';
       position: absolute;
-      left: 0;
-      width: 3px;
+      left: 26px;
+      right: 0;
+      height: 3px;
       background-color: var(--orange);
     }
 
-    .new-header-services::before {
-      top: 0;
-      height: 3px;
-      width: 100%;
+    .new-header-services::before { top: 0; }
+    .new-header-services::after  { bottom: 0; }
+
+    .service-line {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.15rem, 2.8vw, 1.9rem);
+      font-weight: 800;
+      line-height: 1.55;
+      white-space: nowrap;
     }
 
-    .new-header-services::after {
-      bottom: 0;
-      height: 3px;
-      width: 100%;
-    }
-
-    .new-header-services h2 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: clamp(1rem, 2.5vw, 1.5rem);
-      font-weight: 600;
-      color: var(--white);
-      margin: 10px 0;
-      line-height: 1.4;
-    }
-
-    .new-header-services h2 .orange-text {
-      color: var(--orange);
-    }
+    .service-line.is-white  { color: var(--white); }
+    .service-line.is-orange { color: var(--orange); }
 
     /* ─── NAV ─── */
     nav {
@@ -364,18 +353,31 @@
       .new-header-content {
         flex-direction: column;
         text-align: center;
-        gap: 20px;
+        gap: 22px;
+      }
+
+      .new-header-logo {
+        align-items: center;
+      }
+
+      .new-header-divider {
+        width: 80%;
+        height: 2px;
+        align-self: center;
       }
 
       .new-header-services {
-        padding-left: 0;
+        padding: 18px 0;
         align-items: center;
       }
 
       .new-header-services::before,
       .new-header-services::after {
-        display: none;
+        left: 0;
+        right: 0;
       }
+
+      .service-line { white-space: normal; }
     }
 
     @media (max-width: 620px) {
@@ -468,22 +470,23 @@
 
 <canvas id="bg-canvas"></canvas>
 
-<!-- NOUVEL EN-TÊTE EXACTEMENT COMME SUR TON IMAGE -->
+<!-- NOUVEL EN-TÊTE : reproduction de la maquette (police Poppins) -->
 <header class="new-header">
   <div class="new-header-content">
     <div class="new-header-logo">
       <div class="logo-text">
-        <span class="i-letter">i</span><span class="lux">lux</span><br>
-        <span class="electro">E L E C T R O</span>
+        <span class="lux">ilux</span>
+        <span class="electro">ELECTRO</span>
       </div>
     </div>
+
+    <div class="new-header-divider"></div>
+
     <div class="new-header-services">
-      <h2>
-        Montage<br>
-        <span class="orange-text">Mise en service</span><br>
-        Dépannage<br>
-        <span class="orange-text">Électrotechnique</span>
-      </h2>
+      <span class="service-line is-white">Montage</span>
+      <span class="service-line is-orange">Mise en service</span>
+      <span class="service-line is-white">Dépannage</span>
+      <span class="service-line is-orange">Électrotechnique</span>
     </div>
   </div>
 </header>
